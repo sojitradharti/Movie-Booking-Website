@@ -1,0 +1,19 @@
+// This is to provide height and width to the left and right arrow in carousel
+#left,
+#right {
+  height: 42px;
+  width: 30px;
+}
+
+// Providing circular radius to images
+.img-responsive {
+  border-radius: 20px;
+}
+
+.items{
+  padding-left:190px;
+  padding-right:180px;
+  padding-top:10px;
+  padding-bottom:10px;
+// background-color: rgb(80,26,40);
+}

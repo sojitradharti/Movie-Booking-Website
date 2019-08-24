@@ -1,0 +1,69 @@
+<footer class="section bg-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">features</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                                                   <li>  <a href="#" *ngIf="!this.dataservice.getIsSignup()">
+                                Booking History
+                              </a> </li>
+                        <li> <a [routerLink]="['/user-review-list']" *ngIf="!this.dataservice.getIsSignup()">
+                            User Reviews
+                          </a> </li>
+
+                      <br><br>
+                             
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                    <div class="">
+                            <h6 class="footer-heading text-uppercase text-white">Help</h6>
+                            <ul class="list-unstyled footer-link mt-4">
+                                <li> <a [routerLink]="['/login']" *ngIf="this.dataservice.getIsSignup()">
+                                    Login
+                                  </a></li>
+                                <li><a [routerLink]="['/signup']" *ngIf="this.dataservice.getIsSignup()">
+                                     Sign Up
+                                  </a> </li>
+                              
+                            </ul>
+                        </div>
+            </div>
+
+          
+
+            <div class="col-lg-4">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>
+                    <p class="contact-info mt-4">Contact us if you need help with anything</p>
+                    <p class="contact-info">+01 123-456-7890</p>
+                    <div class="mt-5">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/" target="_blank"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/" target="_blank"><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.google.com/" target="_blank"><i
+                                        class="fa fa-google"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="https://in.pinterest.com/" target="_blank"><i
+                                        class="fa fa-pinterest"></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.youtube.com/" target="_blank"><i
+                                        class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="footer-alt mb-0 f-14">2019 © BMM, All Rights Reserved</p>
+    </div>
+</footer>

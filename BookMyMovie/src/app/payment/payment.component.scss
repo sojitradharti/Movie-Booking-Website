@@ -1,0 +1,98 @@
+
+@import "./../../scss/variable";
+
+
+.mainc {
+  display: grid;
+  max-width: $grid__bp-md * 1px;
+  grid-template-columns: 30% auto 30%;
+  margin:10px;
+  background-color: rgb(31, 27, 34);
+  grid-auto-rows: minmax(80px, auto);
+  grid-gap: 6px;
+
+}
+
+.input-group-append {
+  width: 60px;
+}
+
+.downloadPDF {
+    background-color: white;
+    border-radius: 11px;
+    padding:6px;
+    margin-left: 110px;
+}
+.mainc_a {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  background-color: rgb(31, 27, 34);
+}
+
+.mainc_b {
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+  background-color:rgb(31, 27, 34);
+}
+.card
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.mainc_c {
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+}
+
+.gradient {
+  position: relative;
+}
+.gradient:after {
+  content: "Gradient Text";
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.gradient h2 {
+  color: #117fb2;
+  -webkit-mask-box-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(20%, rgba(0, 0, 0, 1)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+}
+
+.height {
+  min-height: 200px;
+}
+
+.table > tbody > tr > .emptyrow {
+  border-top: none;
+}
+
+.table > thead > tr > .emptyrow {
+  border-bottom: none;
+}
+
+.table > tbody > tr > .highrow {
+  border-top: 3px solid;
+}
+.note
+{
+  margin: 2%;
+  background-color: #FFE6EE;
+  font-size: 12px;
+  padding: 10px;
+}
+
+// accessing inheritence concepts 
+h3 {
+  @extend %font-shared;
+  color: whitesmoke;
+   margin-top: 20px;
+   font-size: 40px;
+  }
+  

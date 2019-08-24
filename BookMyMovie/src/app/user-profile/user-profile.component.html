@@ -1,0 +1,73 @@
+<!--User profile component-->
+<div ng-app="myApp" ng-controller="myController" class="container">
+  <form name="userProfileForm" [formGroup]="userProfileForm" (ngSubmit)="submitUserDetails()">
+    <div class="login-container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" id="firstname" formControlName="firstname" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" >
+
+            <div *ngIf="submitted && f.firstname.errors" >
+              <div *ngIf="f.firstname.errors.required" class="error">First name is required</div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" id="lastname" formControlName="lastname" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
+            <div *ngIf="submitted && f.lastname.errors" >
+              <div *ngIf="f.lastname.errors.required" class="error">Last name is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors" >
+              <div *ngIf="f.email.errors.required" class="error">Email is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Phone number</label>
+            <input type="phoneNo" id="phoneNo" formControlName="phoneNo" class="form-control" pattern="\d*" name="" maxlength="10" minlength="10"
+                   [ngClass]="{ 'is-invalid': submitted && f.phoneNo.errors }">
+            <div *ngIf="submitted && f.phoneNo.errors" >
+              <div *ngIf="f.phoneNo.errors.required" class="error">Username is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="email" minlength="4" id="username" formControlName="username" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+            <div *ngIf="submitted && f.username.errors" >
+              <div *ngIf="f.username.errors.required" class="error">Username is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <button class="btn btn-success signup">Update</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!--<div class="col-md-12">-->
+        <!--<div ng-show="showError" class="alert alert-danger">Wrong credentials!</div>-->
+        <!--<div ng-show="showSuccess" class="alert alert-success">Login Successful!</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </form>
+</div>

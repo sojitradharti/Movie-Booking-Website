@@ -1,0 +1,23 @@
+<!-- This is a container for slider-track which loads the slides -->
+<div id="container">
+  <div ng2-carouselamos class="slides-wrapper" [items]="items" [width]="900" [$prev]="prev" [$next]="next"
+    [$item]="item">
+
+  </div>
+  <!-- #prev loads the left button -->
+  <ng-template #prev>
+    <img src="../../assets/Images/left.jpg" id="left">
+  </ng-template>
+
+  <!-- #next loads the left button -->
+  <ng-template #next>
+    <img src="../../assets/Images/right.jpg" id="right">
+  </ng-template>
+
+  <!-- This renders the list of images -->
+  <ng-template #item let-item let-i="index">
+    <div class="items">
+      <img src="{{item.name}}">
+    </div>
+  </ng-template>
+</div>

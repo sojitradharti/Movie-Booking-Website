@@ -1,0 +1,98 @@
+<div class="maindiv">
+  <div class="videomiddle">
+    <h3> <span class="label label-warning"> {{movie.movieName}} Trailer</span></h3>
+
+    <iframe class="video" [src]="url | safe"></iframe>
+  </div>
+  <div class="card">
+    <p class="title">{{movie.movieName}}</p>
+    <!-- Show movie Data in card -->
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><strong><strong>Rating:</strong></strong></td>
+          <td> <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span></td>
+        </tr>
+        <tr>
+          <td><strong>Length:</strong></td>
+          <td> {{movie.movieLength}}</td>
+        </tr>
+        <tr>
+          <td><strong>Language:</strong></td>
+          <td> {{movie.language}}</td>
+        </tr>
+        <tr>
+          <td><strong>Directed By:</strong></td>
+          <td> {{movie.directorName}}</td>
+        </tr>
+        <tr>
+          <td><strong>Premiere:</strong></td>
+          <td> {{movie.movieReleaseDate}}</td>
+        </tr>
+        <tr>
+          <td><strong>Category:</strong></td>
+          <td> {{movie.movieType}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- datepicker -->
+  <div class="middlepart">
+    <div class="movie-date-selection">
+      <div class="date-picker">
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dateModel" ngbDatepicker
+                #d="ngbDatepicker" [minDate]="minDate" [maxDate]="maxDate">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- display Showtime -->
+      <div *ngFor="let c of result" class="main">
+        <div class="location">
+          {{c.name}}
+        </div>
+
+         <div class="time" *ngFor="let ca of c.values;">
+          <button type="button" value="{{ca._id}}" (click)="selectShowtime(ca._id,ca.theatreId,ca.showTime)"
+            class="btn1 btn-outline-danger">{{ca.showTime}}</button>
+        </div> 
+      </div>
+
+      <button type="button" (click)="confirm()" class="button btn btn-primary middle">Book Tickets</button>
+      <button type="button" class="btn btn-primary middle button" (click)="onClickPostReview()">Post Review</button>
+
+    
+
+    <!-- list of user reviews -->
+    <app-customer-review-template [parentData]="movieName" [movieId]="movieId" *ngIf="isOn" (add_invoked)="changevalue()">
+      </app-customer-review-template>
+    <table class="content-table">
+        <thead><tr>
+          <th>Movie Name </th>
+          <th class="desc">User Reviews </th>
+          <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr class="reviewTable" *ngFor="let part of list">
+            <!-- <td>{{parentData}}</td> -->
+            <td>{{part.mname}}</td>
+            <td >{{part.desc}}</td>
+            <td>{{part.date}}</td>
+          </tr>
+        </tbody>
+        </table>
+  </div>
+</div>
+</div>
+
+

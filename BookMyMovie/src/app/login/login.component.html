@@ -1,0 +1,45 @@
+<!--Login component html-->
+<div ng-app="myApp" ng-controller="myController" class="container">
+  <!--For group declaration for login-->
+  <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="authenticate()">
+    <div class="login-container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Username</label>
+            <!--Field for username-->
+            <input type="email" minlength="4" placeholder="Enter Username" id="username" formControlName="username" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+            <div *ngIf="submitted && f.username.errors" >
+              <div *ngIf="f.username.errors.required" class="error">Username is required</div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label>Password</label>
+            <!--Field for password-->
+            <input type="password" placeholder="Enter Password" formControlName="password" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" >
+              <div *ngIf="f.password.errors.required" class="error">Password is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <button class="btn btn-success login">Login</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <!--Links to sign up and forgot password-->
+      <a class= "forgotPass"  (click)="forgotPassword()" [routerLink]="['/forgotpassword']">Forgot password?</a><br>
+      <span class="signup">Don't have an account? <a [routerLink]="['/signup']" > Sign Up</a></span>
+    </div>
+  </form>
+
+
+
+</div>

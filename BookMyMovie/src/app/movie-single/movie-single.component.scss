@@ -1,0 +1,149 @@
+@import "./../../scss/variable";
+
+.video {
+  width: 800px;
+  height: 450px;
+}
+.maindiv,.middlepart {
+  margin: $margin-padding;
+  padding: $margin-padding;
+}
+.maindiv,.main{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.reviewTable {
+  border: 1px solid black;
+}
+.movie-date-selection div div.location {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.8em;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: $button-background-colors;
+}
+
+.movie-date-selection div.time {
+  display: inline;
+  padding: 1em;
+  //background-color: #FCFCFC;
+  margin-left: 1.5%;
+}
+
+.movie-date-selection div.main {
+  padding: 2em;
+  //background-color: #FCFCFC;
+  margin: 1.5%;
+  border: 1px solid #eee;
+}
+
+.btn1 {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: $none;
+  border: 1px solid $button-background-colors;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+}
+.movie-meta {
+  margin: 50px;
+  .starring,
+  ul,
+  li {
+    margin: 10px;
+    list-style: $none; 
+  }
+}
+.movie-meta li,
+.starring li {
+  margin-bottom: 10px;
+}
+.checked {
+  color: orange;
+}
+button.calendar,
+button.calendar:active {
+  width: 64px;
+  height: 34px;
+  border: 1px solid gray;
+  background-image: url("../../assets/images/calendar.png") !important;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
+  padding-left: 10px;
+  
+}
+
+.ngb-dp-arrow-btn {
+  padding: 0 !important;
+}
+
+.date-picker {
+  width: 100px;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+}
+
+.content-table thead tr {
+  background-color:rgb(220, 53, 69);
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+.desc {
+  width: 300px;
+}
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(220, 53, 69);
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+ // margin: auto;
+  text-align: center;
+  font-family: arial;
+  
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.button
+{
+  margin: $margin-padding;
+}

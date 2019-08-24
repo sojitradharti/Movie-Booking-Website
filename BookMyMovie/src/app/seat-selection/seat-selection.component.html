@@ -1,0 +1,497 @@
+<!-- Added by Dharati on04/18/2019 -->
+<div class="body">
+    <h1>Movie Seat Selection</h1>
+    <div class="container">
+        <div class="w3ls-reg">
+            <!-- input fields -->
+            <div class="inputForm">
+                <h2>fill the required details below and select your seats</h2>
+                <div class="mr_agilemain">
+                    <div class="agileits-left">
+                        <label class="mr_agilemain"> Name
+                            <span>*</span>
+                        </label>
+                        <input type="text" id="Username" [(ngModel)]="model.name" required>
+                    </div>
+                    <div class="agileits-right">
+                        <label> Number of Seats
+                            <span>*</span>
+                        </label>
+                        <input type="number" id="Numseats" [(ngModel)]="model.Numseats" required min="1">
+                    </div>
+                </div>
+              
+            </div>
+            <!-- //input fields -->
+            <!-- seat availabilty list -->
+            <ul class="seat_w3ls">
+                <li class="smallBox greenBox">Selected/Booked Seat</li>
+
+                <!-- <li class="smallBox redBox">Reserved Seat</li> -->
+
+                <li class="smallBox emptyBox">Empty Seat</li>
+            </ul>
+            <!-- seat availabilty list -->
+            <!-- seat layout -->
+            <div class="seatStructure txt-center"   >
+                <table id="seatsBlock">
+                    <p id="notification"></p>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td></td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A1"    (click)="addchk('A1')">
+                        </td>
+                        <td>
+                            <input type="checkbox"  class="seats" id="A2" (click)="addchk('A2')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A3"  (click)="addchk('A3')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A4"  (click)="addchk('A4')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A5"  (click)="addchk('A5')">
+                        </td>
+                        <td class="seatGap"></td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A6"  (click)="addchk('A6')">
+                        </td>
+                        <td>
+                            <input type="checkbox" id="A7" class="seats" id="A7"  (click)="addchk('A7')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A8"  (click)="addchk('A8')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A9"  (click)="addchk('A9')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A10"  (click)="addchk('A10')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A11"  (click)="addchk('A11')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="A12"  (click)="addchk('A12')">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>B</td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B1"  (click)="addchk('B1')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B2" (click)="addchk('B2')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B3"  (click)="addchk('A3')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B4"  (click)="addchk('B4')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B5"  (click)="addchk('B5')">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B6"  (click)="addchk('B6')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B7"  (click)="addchk('B7')"> 
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B8"  (click)="addchk('B8')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B9"  (click)="addchk('B9')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B10"  (click)="addchk('B10')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B11"  (click)="addchk('B11')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="B12"  (click)="addchk('B12')">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>C</td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C1"  (click)="addchk('C1')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C2"  (click)="addchk('C2')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C3"  (click)="addchk('C3')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C4"  (click)="addchk('C4')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C5"  (click)="addchk('C5')">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C6"  (click)="addchk('C6')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C7"  (click)="addchk('C7')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C8"  (click)="addchk('C8')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C9"  (click)="addchk('C9')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C10"  (click)="addchk('C10')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C11"  (click)="addchk('C11')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="C12"  (click)="addchk('C12')">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>D</td>
+                        <td>
+                            <input type="checkbox" class="seats"   (click)="addchk('D1')" id="D1">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D2')" id="D2">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D3')" id="D3">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D4')" id="D4">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D5')" id="D5">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D6')" id="D6">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D7')" id="D7">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D8')" id="D8">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D9')" id="D9">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D10')" id="D10">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D11')" id="D11">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('D12')" id="D12">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>E</td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E1')" id="E1">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E2')" id="E2">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E3')" id="E3">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E4')" id="E4">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E5')" id="E5">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E6')" id="E6">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E7')" id="E7">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E8')" id="E8">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E9')" id="E9">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E10')" id="E10">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E11')" id="E11">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('E12')" id="E12">
+                        </td>
+                    </tr>
+
+                    <tr class="seatVGap"></tr>
+
+                    <tr>
+                        <td>F</td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F1')" id="F1">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F2')" id="F2">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F3')" id="F3">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F4')" id="F4">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F5')" id="F5">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F6')" id="F6">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F7')" id="F7">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F8')" id="F8">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F9')" id="F9">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F10')" id="F10">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F11')" id="F11">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('F12')" id="F12">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>G</td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G1')" id="G1">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G2')" id="G2">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G3')" id="G3">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G4')" id="G4">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G4')" id="G4">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G6')" id="G6">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G7')" id="G7">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G8')" id="G8">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G9')" id="G9">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G10')" id="G10">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G11')" id="G11">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('G12')" id="G12">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>H</td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H1')" id="H1">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H2')" id="H2">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H3')" id="H3">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H4')" id="H4">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H5')" id="H5">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H6')" id="H6">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H7')" id="H7">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H8')" id="H8">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H9')" id="H9">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H10')" id="H10">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H11')" id="H11">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('H12')" id="H12">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>I</td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('I1')" id="I1">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats"  (click)="addchk('I2')" id="I2">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I3"  (click)="addchk('I3')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I4"  (click)="addchk('I4')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I5"  (click)="addchk('I5')">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I6"  (click)="addchk('I6')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I7"  (click)="addchk('I7')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I8"  (click)="addchk('I8')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I9"  (click)="addchk('I9')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I10"  (click)="addchk('I10')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I11"  (click)="addchk('I11')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="I12"  (click)="addchk('I12')">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>J</td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J1"  (click)="addchk('J1')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J2"  (click)="addchk('J2')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J3"  (click)="addchk('J3')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J4"  (click)="addchk('J4')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J5"  (click)="addchk('J5')">
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J6"  (click)="addchk('J6')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J7"  (click)="addchk('J7')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J8"  (click)="addchk('J8')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J9"  (click)="addchk('J9')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J10"  (click)="addchk('J10')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J11"  (click)="addchk('J11')">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="seats" id="J12"  (click)="addchk('J12')">
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="screen">
+                    <h2 class="wthree">Screen this way</h2>
+                </div>
+                <button (click)="confirmandpay()">Confirm & Pay</button>
+            </div>
+           
+            <div class="displayerBoxes txt-center">
+                <table class="Displaytable w3ls-table" width="100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of Seats</th>
+                        <th>Seats</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id="nameDisplay"[(ngModel)]="model.name" ></textarea>
+                        </td>
+                        <td>
+                            <textarea id="NumberDisplay" [(ngModel)]="model.Numseats"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="seatsDisplay" [(ngModel)]="model.seats"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      
+    </div>
+</div>

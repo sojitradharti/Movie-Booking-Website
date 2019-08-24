@@ -1,0 +1,46 @@
+
+<div class="mainc">
+      <div class = "mainc_b">
+  <br>
+  <span> <h1>Booking History</h1></span>
+ 
+  <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Booking ID</th>
+      <th scope="col">Show Date</th>
+      <th scope="col">Movie Name</th>
+    </tr>
+  </thead>
+  <tbody>
+<!-- Fecthing order history data for the user-->
+    <tr  *ngFor ="let c of list | paginate: { itemsPerPage:6, currentPage: p }"> 
+       <td> # </td>
+        <td>{{c._id}}</td>
+        <td>{{c.creationtime}}</td> 
+      <td><button class="viewBtn" value="{{c}}" #view (click)="onClickDetail(c)">
+      View</button></td>
+      </tr>
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
+<div class = "mainc_c">
+    <span> <h3>Booking Detail</h3></span>
+    <table class="table table-striped table-dark">
+        
+        <tbody>
+        <!-- displaying specific order details based on click on the view button-->    
+          <tr> <td>Theater Name</td><td>{{theatername}}</td> </tr>
+            <tr><td>Movie Name </td><td>{{moviename}}</td></tr>
+            <tr><td> Show Time  </td><td>{{showtime}}</td></tr>
+            <tr><td>Seat Details </td><td>{{seatdetails}}</td></tr>
+            <tr><td> Movie Date </td><td>{{bookingtime}}</td></tr>
+            <tr><td> Total Amount</td><td>{{totalamount}}</td></tr>
+         </tbody>
+      </table>
+</div>
+
+  </div>
+

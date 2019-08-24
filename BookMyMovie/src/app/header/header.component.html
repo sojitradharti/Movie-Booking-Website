@@ -1,0 +1,63 @@
+
+<!-- All the dependency files needed for css -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<!-- file used inside script tag to render bootstrap css -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- bootstrap navigation bar -->
+<nav class="navbar navbar-inverse navbar-expand">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="../../assets/Images/logobetter.jpg" id="logo" alt="lOGO">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/user-profile']" *ngIf="!this.dataservice.getIsSignup()">
+          Profile
+        </a></li>
+        <li> <a [routerLink]="['/orderhistory']" *ngIf="!this.dataservice.getIsSignup()">
+            Booking History
+          </a></li>
+        <li><a [routerLink]="['/user-review-list']" *ngIf="!this.dataservice.getIsSignup()">
+            User Reviews
+          </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['/login']">{{this.dataservice.getisDisplayname()}}</a></li>
+
+        <li><a *ngIf="this.dataservice.getIsSignup()" [routerLink]="['/signup']"><span
+              class="glyphicon glyphicon-log-in"></span> Sign Up</a></li>
+        <li><a href="#">
+            <nav role='navigation'>
+              <div id="menuToggle">
+                <!-- checkbox used as click so as to use the :checked selector on it. -->
+                <input type="checkbox" />
+                <!-- actual hamburger bars -->
+                <span></span>
+                <span></span>
+                <span></span>
+                <!-- menu that opens after clicking on hamburger -->
+                <ul id="menu">
+                 <a [routerLink]="['/signup']" *ngIf="this.dataservice.getIsSignup()">
+                    / Sign Up
+                  </a> <br><br>
+                  <a [routerLink]="['/user-profile']" *ngIf="!this.dataservice.getIsSignup()">
+                    Profile
+                  </a> <br><br>
+                  <a [routerLink]="['/orderhistory']" *ngIf="!this.dataservice.getIsSignup()">
+                    Booking History
+                  </a> <br><br>
+                  <a [routerLink]="['/user-review-list']" *ngIf="!this.dataservice.getIsSignup()">
+                    User Reviews
+                  </a> <br><br>
+                </ul>
+              </div>
+            </nav>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

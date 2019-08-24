@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<table class="content-table">
+  <thead>
+    <tr>
+      <th>Movie Name </th>
+      <th class="desc">User Reviews </th>
+      <th>Date</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="reviewTable" *ngFor="let part of list">
+      <td>{{part.mname}}</td>
+      <td>{{part.desc}}</td>
+      <td>{{part.date}}</td>
+      <td><button (click)="deleteReview(part._id)" class="trash"><i class="fa fa-trash-o"></i></button></td>
+    </tr>
+  </tbody>
+</table>
