@@ -26,7 +26,7 @@
     "ag-grid-community": "^20.2.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.5.1",
     "ng2-carouselamos": "^3.2.0",
     "ngx-cookie-service": "^2.1.0",
     "ngx-pagination": "^3.2.1",
